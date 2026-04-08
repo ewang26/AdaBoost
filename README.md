@@ -2,7 +2,7 @@
 
 A computer-assisted counterexample to the open question (Rudin, Schapire, and Daubechies, COLT 2012) of whether exhaustive AdaBoost always converges to a finite cycle.
 
-- **[AdaBoost_sol.pdf](paper/AdaBoost_sol.pdf)** — Manuscript
+- **[AdaBoost_sol.pdf](AdaBoost_sol.pdf)** — Manuscript
 - **[certificate/](certificate/)** — Computational certificate (exact rational arithmetic, no floating point)
 
 ## Running the certificate
