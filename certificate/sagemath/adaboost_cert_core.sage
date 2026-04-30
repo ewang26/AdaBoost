@@ -211,6 +211,16 @@ assert R_poly(_num_F0Bd * RB_manuscript - _den_F0Bd * DB_manuscript) == 0, \
 assert R_poly(_num_F0Be * RB_manuscript - _den_F0Be * EB_manuscript) == 0, \
     "B-gadget e-component mismatch"
 
+# Verify the displayed numerator/denominator pairs are reduced to lowest terms.
+# This is what justifies the gcd-based regularity argument in Lemma 8: from the
+# rational-function equality P*Q_tilde = Q*P_tilde, Euclid's lemma in Q[p,d]
+# (resp. Q[p,d,e]) needs gcd(P,Q)=1 to conclude Q | Q_tilde.
+assert PA_manuscript.gcd(QA_manuscript) == 1, "P_A and Q_A are not coprime"
+assert DA_manuscript.gcd(RA_manuscript) == 1, "D_A and R_A are not coprime"
+assert PB_manuscript.gcd(QB_manuscript) == 1, "P_B and Q_B are not coprime"
+assert DB_manuscript.gcd(RB_manuscript) == 1, "D_B and R_B are not coprime"
+assert EB_manuscript.gcd(RB_manuscript) == 1, "E_B and R_B are not coprime"
+
 
 # -----------------------------------------------------------------------------
 # Exact period-2 orbit on the face e=0

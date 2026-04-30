@@ -185,6 +185,16 @@ assert sp.expand(_num_F0Bd * RB_manuscript - _den_F0Bd * DB_manuscript) == 0, \
 assert sp.expand(_num_F0Be * RB_manuscript - _den_F0Be * EB_manuscript) == 0, \
     "B-gadget e-component: displayed E_B/R_B differs from computed F_0^B"
 
+# Verify the displayed numerator/denominator pairs are reduced to lowest terms.
+# This is what justifies the gcd-based regularity argument in Lemma 8: from the
+# rational-function equality P*Q_tilde = Q*P_tilde, Euclid's lemma in Q[p,d]
+# (resp. Q[p,d,e]) needs gcd(P,Q)=1 to conclude Q | Q_tilde.
+assert sp.gcd(PA_manuscript, QA_manuscript) == 1, "P_A and Q_A are not coprime"
+assert sp.gcd(DA_manuscript, RA_manuscript) == 1, "D_A and R_A are not coprime"
+assert sp.gcd(PB_manuscript, QB_manuscript) == 1, "P_B and Q_B are not coprime"
+assert sp.gcd(DB_manuscript, RB_manuscript) == 1, "D_B and R_B are not coprime"
+assert sp.gcd(EB_manuscript, RB_manuscript) == 1, "E_B and R_B are not coprime"
+
 
 # -----------------------------------------------------------------------------
 # Exact period-2 orbit on the face e=0
