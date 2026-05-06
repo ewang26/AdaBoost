@@ -2,10 +2,6 @@
 
 A computer-assisted counterexample to the open question (Rudin, Schapire, and Daubechies, COLT 2012) of whether exhaustive AdaBoost always converges to a finite cycle.
 
-- **[arXiv:2604.07055](https://arxiv.org/abs/2604.07055)** — Paper
-- **[AdaBoost_sol.pdf](AdaBoost_sol.pdf)** — Manuscript
-- **[certificate/](certificate/)** — Computational certificate (exact rational arithmetic, no floating point)
-
 ## Running the certificate
 
 Two independent implementations are provided: SymPy (Python) and SageMath.
