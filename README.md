@@ -1,27 +1,34 @@
 # AdaBoost Does Not Always Cycle
 
-A computer-assisted counterexample to the open question (Rudin, Schapire, and Daubechies, COLT 2012) of whether exhaustive AdaBoost always converges to a finite cycle.
+Computational certificates accompanying the computer-assisted counterexample to
+Rudin, Schapire, and Daubechies’s COLT 2012 open problem.
 
 - **[arXiv:2604.07055](https://arxiv.org/abs/2604.07055)** — Paper
-- **[AdaBoost_sol.pdf](AdaBoost_sol.pdf)** — Manuscript
-- **[certificate/](certificate/)** — Computational certificate (exact rational arithmetic, no floating point)
+- **[certificate/](certificate/)** — Exact-arithmetic certificates
 
 ## Running the certificate
 
-Two independent implementations are provided: SymPy (Python) and SageMath.
+The current certificate verifies the revised construction with 2,500 examples,
+a uniform initial distribution, and weak-learning margin 1/5.
+Run the following commands from the repository root, with assertions enabled.
 
-### SymPy (requires Python >= 3.12 and SymPy >= 1.14)
-
-```bash
-cd certificate/sympy
-python adaboost_cert_full.py
-```
-
-### SageMath (requires SageMath >= 10.8)
+### SymPy (Python 3.11+ and SymPy 1.14)
 
 ```bash
-cd certificate/sagemath
-sage adaboost_cert_full.sage
+python3 -m pip install -r certificate/requirements.txt
+python3 certificate/verify.py
+python3 certificate/check_report.py
 ```
 
-See [cert_readme.md](certificate/cert_readme.md) for details.
+### SageMath (SageMath 10.8)
+
+```bash
+sage -python certificate/replication/replay_sage.py
+python3 certificate/check_report.py
+```
+
+The Sage replay uses native Sage algebra and shares the geometric and entry
+checks with the SymPy driver. The original drivers in `certificate/sympy/` and
+`certificate/sagemath/` are retained for the earlier construction.
+
+See [certificate/README.md](certificate/README.md) for verification details.
