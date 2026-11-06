@@ -32,3 +32,17 @@ checks with the SymPy driver. The original drivers in `certificate/sympy/` and
 `certificate/sagemath/` are retained for the earlier construction.
 
 See [certificate/README.md](certificate/README.md) for verification details.
+
+## Citation
+
+In case you find this work interesting and use it, please cite:
+
+```bibtex
+@inproceedings{wang2026resolving,
+  title     = {Resolving {AdaBoost} Cycling with {LLMs}: A Computer-Assisted Counterexample},
+  author    = {Wang, Erik Y.},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026},
+  url       = {https://openreview.net/forum?id=4G0MC6XSqQ}
+}
+```
